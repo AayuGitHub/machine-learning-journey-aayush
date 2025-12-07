@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-base {
+        @apply h-14 rounded-2xl font-medium transition-all duration-300 active:scale-95 flex items-center justify-center text-xl backdrop-blur-md border shadow-lg select-none;
+    }
+
+    .btn-num {
+        @apply btn-base bg-white/40 dark:bg-white/5 text-slate-800 dark:text-white border-white/60 dark:border-white/5 hover:bg-white/60 dark:hover:bg-white/10;
+    }
+
+    .btn-op {
+        @apply btn-base bg-indigo-500/80 dark:bg-orange-500/80 text-white border-transparent hover:bg-indigo-600/100 dark:hover:bg-orange-500/100;
+    }
+
+    .btn-scientific {
+        @apply btn-base bg-purple-500/10 dark:bg-purple-500/20 text-purple-900 dark:text-purple-100 border-purple-200/50 dark:border-white/5 hover:bg-purple-500/20 dark:hover:bg-purple-500/40 text-base font-semibold;
+    }
+
+    .btn-action {
+        @apply btn-base text-white font-bold shadow-xl;
+    }
+}
+
+body {
+    @apply min-h-screen text-slate-900 dark:text-white transition-colors duration-500 font-sans;
+    /* Light Mode: Soft Indigo/Pink Gradient */
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.dark body {
+    /* Dark Mode: Deep Void Gradient */
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 100%);
+}
+
+/* Ensure Next.js wrapper allows height */
+#__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
